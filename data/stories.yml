@@ -1,0 +1,116 @@
+version: "3.1"
+
+stories:
+
+# ── GENERAL FLOWS ──────────────────────────────────────────────────────────────
+
+- story: greet and help
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: help
+    - action: utter_help
+
+- story: greet and goodbye
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: goodbye
+    - action: utter_goodbye
+
+- story: ask about platform
+  steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: ask_about_platform
+    - action: utter_about_platform
+    - intent: ask_categories
+    - action: utter_ask_categories
+
+# ── BUYER FLOWS ────────────────────────────────────────────────────────────────
+
+- story: buyer searches projects by category
+  steps:
+    - intent: search_project
+    - action: action_search_projects
+    - intent: ask_project_price
+    - action: utter_refund_policy
+
+- story: buyer asks about categories then searches
+  steps:
+    - intent: ask_categories
+    - action: utter_ask_categories
+    - intent: search_project
+    - action: action_search_projects
+
+- story: buyer wants to buy a project
+  steps:
+    - intent: search_project
+    - action: action_search_projects
+    - intent: buy_project
+    - action: utter_download_help
+
+- story: buyer checks order status
+  steps:
+    - intent: check_order_status
+    - action: action_check_order_status
+
+- story: buyer needs download help
+  steps:
+    - intent: ask_download_help
+    - action: utter_download_help
+    - intent: thank
+    - action: utter_thank
+
+- story: buyer asks refund
+  steps:
+    - intent: ask_refund_policy
+    - action: utter_refund_policy
+    - intent: ask_contact_support
+    - action: utter_contact_support
+
+# ── SELLER FLOWS ───────────────────────────────────────────────────────────────
+
+- story: seller wants to sell
+  steps:
+    - intent: ask_how_to_sell
+    - action: utter_how_to_sell
+    - intent: ask_listing_guidelines
+    - action: utter_listing_guidelines
+
+- story: seller asks about payment
+  steps:
+    - intent: ask_how_to_sell
+    - action: utter_how_to_sell
+    - intent: ask_payment_info
+    - action: utter_payment_info
+
+- story: seller checks approval
+  steps:
+    - intent: ask_approval_status
+    - action: action_check_approval_status
+
+- story: seller full flow
+  steps:
+    - intent: ask_how_to_sell
+    - action: utter_how_to_sell
+    - intent: ask_listing_guidelines
+    - action: utter_listing_guidelines
+    - intent: ask_payment_info
+    - action: utter_payment_info
+    - intent: thank
+    - action: utter_thank
+
+# ── SUPPORT FLOWS ──────────────────────────────────────────────────────────────
+
+- story: contact support
+  steps:
+    - intent: ask_contact_support
+    - action: utter_contact_support
+
+- story: user thanks and leaves
+  steps:
+    - intent: thank
+    - action: utter_thank
+    - intent: goodbye
+    - action: utter_goodbye

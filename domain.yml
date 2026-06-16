@@ -1,0 +1,198 @@
+version: "3.1"
+
+# ── INTENTS ────────────────────────────────────────────────────────────────────
+intents:
+  # General
+  - greet
+  - goodbye
+  - affirm
+  - deny
+  - thank
+  - help
+
+  # Buyer intents
+  - search_project
+  - ask_project_price
+  - ask_project_details
+  - buy_project
+  - check_order_status
+  - ask_download_help
+  - ask_refund_policy
+
+  # Seller intents
+  - ask_how_to_sell
+  - ask_listing_guidelines
+  - ask_payment_info
+  - ask_approval_status
+
+  # Platform intents
+  - ask_about_platform
+  - ask_categories
+  - ask_contact_support
+
+# ── ENTITIES ───────────────────────────────────────────────────────────────────
+entities:
+  - category      # java, python, ai_ml, web_dev, final_year, mini
+  - project_name
+  - email
+  - order_id
+
+# ── SLOTS ──────────────────────────────────────────────────────────────────────
+slots:
+  category:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: category
+  project_name:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: project_name
+  email:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: email
+  order_id:
+    type: text
+    mappings:
+      - type: from_entity
+        entity: order_id
+
+# ── RESPONSES ──────────────────────────────────────────────────────────────────
+responses:
+
+  utter_greet:
+    - text: "Hello! 👋 Welcome to Project Marketplace. I can help you find projects to buy or guide you to sell your own. What are you looking for today?"
+    - text: "Hi there! Welcome! Are you here to buy a project or sell one?"
+
+  utter_goodbye:
+    - text: "Goodbye! Feel free to come back anytime. Happy coding! 🚀"
+
+  utter_thank:
+    - text: "You're welcome! Let me know if there's anything else I can help with."
+
+  utter_help:
+    - text: |
+        Here's what I can help you with:
+
+        🛒 **Buyers:**
+        - Search projects by category
+        - Check prices and details
+        - Track your orders
+        - Download help
+
+        💼 **Sellers:**
+        - How to list your project
+        - Pricing guidelines
+        - Payment & approval info
+
+        Just type what you need!
+
+  utter_ask_categories:
+    - text: |
+        We have projects in these categories:
+        1. ☕ Java Projects
+        2. 🐍 Python Projects
+        3. 🤖 AI/ML Projects
+        4. 🌐 Web Development Projects
+        5. 🎓 Final Year Projects
+        6. 🔧 Mini Projects
+
+        Which category interests you?
+
+  utter_about_platform:
+    - text: |
+        Project Marketplace is a platform where:
+        ✅ Students & developers can **buy** ready-made projects
+        ✅ Developers can **sell** their projects and earn money
+        ✅ We cover Java, Python, AI/ML, Web Dev, Final Year & Mini projects
+        
+        All projects come with source code, documentation, and support!
+
+  utter_refund_policy:
+    - text: |
+        Our refund policy:
+        🔄 Refunds are available within **7 days** of purchase
+        📋 Conditions: project must not work as described
+        📧 Contact support@projectmarketplace.com with your order ID
+        
+        We review all refund requests within 48 hours.
+
+  utter_how_to_sell:
+    - text: |
+        To sell your project, follow these steps:
+        1️⃣ Register/Login as a **Seller**
+        2️⃣ Go to **Dashboard → Upload Project**
+        3️⃣ Fill in title, description, tech stack & price
+        4️⃣ Upload your **ZIP file** (source code + docs)
+        5️⃣ Submit — we review within **24 hours**!
+        
+        Once approved, buyers can find and purchase your project. 💰
+
+  utter_listing_guidelines:
+    - text: |
+        Guidelines for listing your project:
+        ✅ Include complete source code
+        ✅ Add a README with setup instructions
+        ✅ Write a clear project description
+        ✅ Add screenshots or a demo video
+        ✅ Set a fair price (₹99 – ₹4999)
+        ❌ No plagiarised or incomplete projects
+        ❌ No duplicate submissions
+
+  utter_payment_info:
+    - text: |
+        💰 **Seller Earnings:**
+        - You earn **80%** of every sale
+        - Platform fee: 20%
+        - Payments are processed every **Monday**
+        - Minimum payout: ₹500
+        - Paid via bank transfer or UPI
+
+  utter_contact_support:
+    - text: |
+        You can reach our support team via:
+        📧 Email: support@projectmarketplace.com
+        💬 Live chat: Available Mon–Sat, 9AM–6PM
+        📞 Phone: +91-XXXXXXXXXX
+        
+        Or type **"escalate"** and I'll connect you to a human agent!
+
+  utter_download_help:
+    - text: |
+        To download your purchased project:
+        1. Go to **My Orders** in your dashboard
+        2. Click on the project you purchased
+        3. Click the **Download** button
+        
+        If the download button is missing, your payment may still be processing. 
+        Please wait 5–10 minutes or contact support.
+
+  utter_default:
+    - text: "I'm not sure I understood that. Could you rephrase? Or type 'help' to see what I can do."
+
+# ── ACTIONS ────────────────────────────────────────────────────────────────────
+actions:
+  - action_search_projects
+  - action_check_order_status
+  - action_get_project_details
+  - action_check_approval_status
+  - utter_greet
+  - utter_goodbye
+  - utter_thank
+  - utter_help
+  - utter_ask_categories
+  - utter_about_platform
+  - utter_refund_policy
+  - utter_how_to_sell
+  - utter_listing_guidelines
+  - utter_payment_info
+  - utter_contact_support
+  - utter_download_help
+  - utter_default
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
