@@ -1,0 +1,6 @@
+.env
+rasa_env/
+__pycache__/
+.rasa/
+*.pyc
+models/*.tar.gz

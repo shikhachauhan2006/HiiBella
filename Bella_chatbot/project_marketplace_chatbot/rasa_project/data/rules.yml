@@ -1,0 +1,78 @@
+version: "3.1"
+
+rules:
+
+- rule: Say hello on greet
+  steps:
+    - intent: greet
+    - action: utter_greet
+
+- rule: Say goodbye on goodbye
+  steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+- rule: Respond to thank you
+  steps:
+    - intent: thank
+    - action: utter_thank
+
+- rule: Show help menu
+  steps:
+    - intent: help
+    - action: utter_help
+
+- rule: Show categories
+  steps:
+    - intent: ask_categories
+    - action: utter_ask_categories
+
+- rule: About platform
+  steps:
+    - intent: ask_about_platform
+    - action: utter_about_platform
+
+- rule: Refund policy
+  steps:
+    - intent: ask_refund_policy
+    - action: utter_refund_policy
+
+- rule: How to sell
+  steps:
+    - intent: ask_how_to_sell
+    - action: utter_how_to_sell
+
+- rule: Listing guidelines
+  steps:
+    - intent: ask_listing_guidelines
+    - action: utter_listing_guidelines
+
+- rule: Seller payment info
+  steps:
+    - intent: ask_payment_info
+    - action: utter_payment_info
+
+- rule: Download help
+  steps:
+    - intent: ask_download_help
+    - action: utter_download_help
+
+- rule: Contact support
+  steps:
+    - intent: ask_contact_support
+    - action: utter_contact_support
+
+- rule: Search projects (custom action)
+  steps:
+    - intent: search_project
+    - action: action_search_projects
+
+- rule: Check order status (custom action)
+  steps:
+    - intent: check_order_status
+    - action: action_check_order_status
+
+- rule: Check approval status (custom action)
+  steps:
+    - intent: ask_approval_status
+    - action: action_check_approval_status

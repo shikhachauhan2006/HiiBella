@@ -1,0 +1,290 @@
+version: "3.1"
+
+nlu:
+
+# ── GENERAL ────────────────────────────────────────────────────────────────────
+
+- intent: greet
+  examples: |
+    - hi
+    - hello
+    - hey
+    - good morning
+    - good evening
+    - howdy
+    - what's up
+    - hi there
+    - hello there
+    - hey bot
+    - namaste
+    - hii
+    - helo
+
+- intent: goodbye
+  examples: |
+    - bye
+    - goodbye
+    - see you
+    - see ya
+    - take care
+    - talk to you later
+    - good night
+    - I'm done
+    - that's all
+    - thanks bye
+    - ok bye
+
+- intent: affirm
+  examples: |
+    - yes
+    - yeah
+    - yep
+    - sure
+    - absolutely
+    - of course
+    - definitely
+    - ok
+    - okay
+    - sounds good
+    - correct
+    - right
+
+- intent: deny
+  examples: |
+    - no
+    - nope
+    - not really
+    - I don't think so
+    - no thanks
+    - nah
+    - never mind
+
+- intent: thank
+  examples: |
+    - thank you
+    - thanks
+    - thanks a lot
+    - thank you so much
+    - that was helpful
+    - great thanks
+    - awesome thanks
+    - cheers
+
+- intent: help
+  examples: |
+    - help
+    - help me
+    - what can you do
+    - what can you help with
+    - show me options
+    - I need help
+    - how does this work
+    - what are my options
+    - guide me
+    - menu
+
+# ── BUYER INTENTS ──────────────────────────────────────────────────────────────
+
+- intent: search_project
+  examples: |
+    - show me [java](category) projects
+    - I want a [python](category) project
+    - find me [AI/ML](category) projects
+    - do you have [web development](category) projects
+    - show [final year](category) projects
+    - I need a [mini](category) project
+    - search projects
+    - show me all projects
+    - browse projects
+    - what projects do you have
+    - I'm looking for a project
+    - find projects for me
+    - I need a project for college
+    - show me [Java](category) based projects
+    - any [Python](category) projects available
+    - I want to buy a project
+    - list all projects
+    - what [AI](category) projects are available
+    - show me [web dev](category) projects
+    - any [machine learning](category) project
+    - I need a [final year project](category)
+
+- intent: ask_project_price
+  examples: |
+    - how much does it cost
+    - what is the price
+    - what is the cost of the project
+    - how much for a java project
+    - are these projects free
+    - what are the prices
+    - price range
+    - how much do I need to pay
+    - is it expensive
+    - cheap projects
+    - affordable projects
+
+- intent: ask_project_details
+  examples: |
+    - tell me more about this project
+    - what does this project include
+    - what is included in the project
+    - does it have source code
+    - is documentation included
+    - what tech stack is used
+    - what language is this project in
+    - does it come with a readme
+    - can I see a demo
+    - more details please
+    - project description
+
+- intent: buy_project
+  examples: |
+    - I want to buy this project
+    - how do I purchase
+    - how to buy
+    - I want to purchase a project
+    - how do I pay
+    - what payment methods do you accept
+    - can I pay via UPI
+    - do you accept credit card
+    - how do I checkout
+    - add to cart
+    - purchase now
+
+- intent: check_order_status
+  examples: |
+    - where is my order
+    - check my order
+    - order status
+    - I haven't received my project
+    - my order ID is [ORD123](order_id)
+    - show my orders
+    - what is the status of my order
+    - I placed an order, where is it
+    - my purchase is not showing
+    - order history
+    - track my order
+
+- intent: ask_download_help
+  examples: |
+    - how do I download
+    - I can't download my project
+    - download not working
+    - where do I find my download
+    - how to get the project file
+    - download link not working
+    - I paid but can't download
+    - where is my purchased project
+    - how to access my project
+    - project file not downloading
+
+- intent: ask_refund_policy
+  examples: |
+    - refund policy
+    - can I get a refund
+    - I want my money back
+    - return policy
+    - how do I request a refund
+    - project didn't work, can I refund
+    - refund request
+    - money back guarantee
+    - is there a refund option
+    - how long for refund
+
+# ── SELLER INTENTS ─────────────────────────────────────────────────────────────
+
+- intent: ask_how_to_sell
+  examples: |
+    - how do I sell my project
+    - I want to sell a project
+    - how to upload my project
+    - how to list my project
+    - how do I become a seller
+    - sell on your platform
+    - I want to earn money from my project
+    - how to submit my project
+    - how to add project for sale
+    - I have a project to sell
+    - how to register as seller
+    - how can I sell my code
+    - selling process
+
+- intent: ask_listing_guidelines
+  examples: |
+    - what are the guidelines for listing
+    - project requirements
+    - what do I need to submit
+    - listing rules
+    - what format should my project be in
+    - do I need documentation
+    - project submission requirements
+    - what makes a good listing
+    - how to make my listing better
+    - guidelines for selling
+
+- intent: ask_payment_info
+  examples: |
+    - how do I get paid
+    - when will I receive my money
+    - seller earnings
+    - how much commission do you take
+    - what is the platform fee
+    - payout schedule
+    - how are payments made
+    - payment to sellers
+    - how much will I earn
+    - when is payout
+    - seller revenue
+
+- intent: ask_approval_status
+  examples: |
+    - has my project been approved
+    - approval status
+    - how long does approval take
+    - when will my project go live
+    - my project is under review
+    - is my project approved
+    - project review status
+    - how long does review take
+    - my listing hasn't been approved
+
+# ── PLATFORM INTENTS ───────────────────────────────────────────────────────────
+
+- intent: ask_about_platform
+  examples: |
+    - what is this platform
+    - tell me about this website
+    - what do you offer
+    - what is project marketplace
+    - about this site
+    - what can I do here
+    - explain this platform
+    - how does this website work
+    - what services do you provide
+
+- intent: ask_categories
+  examples: |
+    - what categories do you have
+    - show me categories
+    - what types of projects
+    - list all categories
+    - what kind of projects
+    - categories available
+    - what subjects
+    - what topics
+    - project types
+
+- intent: ask_contact_support
+  examples: |
+    - contact support
+    - talk to a human
+    - I need human help
+    - escalate
+    - transfer to agent
+    - speak to someone
+    - connect me to support
+    - I want to talk to a person
+    - human agent please
+    - support team
+    - reach support
+    - email support
