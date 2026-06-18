@@ -19,13 +19,13 @@ load_dotenv()
 
 # ── Config — now reads from .env / Render environment variables ────────────────
 RASA_SERVER_URL = os.getenv("RASA_SERVER_URL", "http://localhost:5005")
-GEMINI_API_KEY  = os.getenv("GEMINI_API_KEY", "")
+GEMINI_API_KEY  = os.getenv("GEMINI_API_KEY", "AIzaSyCsXkAoUzFgCXUXGkffHwi9fGtrSYMXeMo")
 GEMINI_MODEL    = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
 
 DB_CONFIG = {
     "host":     os.getenv("DB_HOST", "localhost"),
     "user":     os.getenv("DB_USER", "root"),
-    "password": os.getenv("DB_PASSWORD", ""),
+    "password": os.getenv("DB_PASSWORD", "shikha142"),
     "database": os.getenv("DB_NAME", "project_marketplace"),
     "charset":  "utf8mb4",
 }
